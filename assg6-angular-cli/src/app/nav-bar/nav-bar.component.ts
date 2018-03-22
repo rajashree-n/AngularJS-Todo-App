@@ -48,7 +48,7 @@ export class NavBarComponent implements OnInit {
         "ToDo":  todo
       }
       this.names.push(td);
-      this.show= true;
+      this.show= false;
     
   }
 
