@@ -6,6 +6,7 @@ import { TodoComponent } from '../todo/todo.component';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
+// nav bar of todo List
 export class NavBarComponent implements OnInit {
 
     Title: string;
@@ -17,6 +18,7 @@ export class NavBarComponent implements OnInit {
   constructor() 
   {
     this.show= true;
+    // Default Items in the Array of JSon File
     this.names = [
       {
           "Title": "Lorem Ipsum",
@@ -36,23 +38,23 @@ export class NavBarComponent implements OnInit {
       }
   ];
   }
- toggle(){
-   this.show= !this.show;
- }
-  
+ 
 
+  
+//Add Items in the todo List
   addTodo(title,author,todo) {
       var td = {
         "Title": title,
         "Author": author,
         "ToDo":  todo
       }
+      // To push the data in to the Array of to do list
       this.names.push(td);
       this.show= false;
     
   }
 
-
+ //To hide and Show the form button at the corner 
   onClickMe() {
     this.show = !this.show;
   }
