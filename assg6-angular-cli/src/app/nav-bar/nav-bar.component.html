@@ -3,18 +3,18 @@
     
     <li><a href="#about" id="user_name">{{myName}}</a></li>
     <li id="btn2" style="float:right;"><button (click)="onClickMe()" style="margin:14px 16px;"><i class="fa fa-plus"></i></button></li>
-    <li id="btn" style="float:right;"><button (click)="onClickMe1()" style="margin:14px 16px;"><i class="fa fa-minus"></i></button></li>
   </ul>
 
-  <div style="text-align:center" #newHero>
-                  TITLE:<br>
-                  <input #Title type="text" name="title"><br>
-                  AUTHOR:<br>
-                  <input #Author type="text" name="author"><br>
-                  TODO:<br>
-                  <input #Todo type="text" name="todo"><br><br>
 
-                  <button (click)="addHero(Title.value,Author.value,Todo.value)" (blur)="addHero(newHero.value); Title.value=''; Todo.value=''; Author.value='' " id="addtodo" type="button">ADD TODO!</button>
+  <div style="text-align:center" [class.todocomponent]="classObject.todocomponent" #newHero>
+      TITLE:<br>
+      <input #Title type="text" name="title"><br>
+      AUTHOR:<br>
+      <input #Author type="text" name="author"><br>
+      TODO:<br>
+      <input #Todo type="text" name="todo"><br><br>
+
+      <button (click)="addHero(Title.value,Author.value,Todo.value)" id="addtodo" type="button">ADD TODO!</button>
   </div>
 
 <section id="section">

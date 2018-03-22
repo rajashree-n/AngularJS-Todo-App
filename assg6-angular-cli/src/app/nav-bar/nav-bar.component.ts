@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoComponent } from '../todo/todo.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  title = 'Name';
+    Title: string;
+    Author: string;
+    ToDo: string;
+    show: boolean;
   myName = 'Spurthi Rajashree!';
   names: Array<any>;
   constructor() {
@@ -31,17 +35,25 @@ export class NavBarComponent implements OnInit {
   ];
   }
 
-  addHero(newHero: string) {
-    if (newHero) {
-      this.names.push("Title:" + newHero.toString);
-    }
-  }
+  
 
-  onClickMe() {
+  addHero(title,author,todo) {
+      var td = {
+        "Title": title,
+        "Author": author,
+        "ToDo":  todo
+      }
+      this.names.push(td);
     
   }
 
+
+  onClickMe() {
+    this.show = !this.show;
+  }
+
   ngOnInit() {
+    this.show = !this.show;
   }
 
 }
