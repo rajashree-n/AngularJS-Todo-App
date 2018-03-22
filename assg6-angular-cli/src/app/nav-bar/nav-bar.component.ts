@@ -14,7 +14,9 @@ export class NavBarComponent implements OnInit {
     show: boolean;
   myName = 'Spurthi Rajashree!';
   names: Array<any>;
-  constructor() {
+  constructor() 
+  {
+    this.show= true;
     this.names = [
       {
           "Title": "Lorem Ipsum",
@@ -34,16 +36,19 @@ export class NavBarComponent implements OnInit {
       }
   ];
   }
-
+ toggle(){
+   this.show= !this.show;
+ }
   
 
-  addHero(title,author,todo) {
+  addTodo(title,author,todo) {
       var td = {
         "Title": title,
         "Author": author,
         "ToDo":  todo
       }
       this.names.push(td);
+      this.show= true;
     
   }
 

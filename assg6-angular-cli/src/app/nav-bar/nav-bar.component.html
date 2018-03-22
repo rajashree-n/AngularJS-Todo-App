@@ -5,8 +5,9 @@
     <li id="btn2" style="float:right;"><button (click)="onClickMe()" style="margin:14px 16px;"><i class="fa fa-plus"></i></button></li>
   </ul>
 
+ 
 
-  <div style="text-align:center" [class.todocomponent]="classObject.todocomponent" #newHero>
+  <div *ngIf= "show" style="text-align:center" [class.todocomponent]="classObject.todocomponent" #newHero>
       TITLE:<br>
       <input #Title type="text" name="title"><br>
       AUTHOR:<br>
@@ -14,8 +15,10 @@
       TODO:<br>
       <input #Todo type="text" name="todo"><br><br>
 
-      <button (click)="addHero(Title.value,Author.value,Todo.value)" id="addtodo" type="button">ADD TODO!</button>
+      <button (click)="onClickMe()" (click)="addTodo(Title.value,Author.value,Todo.value)" id="addtodo" type="button">ADD TODO!</button>
   </div>
+
+
 
 <section id="section">
 
